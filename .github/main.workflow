@@ -4,13 +4,13 @@ workflow "Build and deploy on push" {
 }
 
 action "npm install" {
-  uses = "actions/npm@6309cd9"
+  uses = "actions/npm@master"
   args = "install"
 }
 
 action "npm build" {
-  uses = "actions/aws/cli@8d31870"
-  args = "run build"
+  uses = "actions/npm@master"
+  args = "build"
   needs = ["npm install"]
 }
 
