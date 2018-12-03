@@ -1,0 +1,49 @@
+{
+  "name": "gooseman-codes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "loaders.css": "^0.1.2",
+    "node-sass-chokidar": "^1.2.2",
+    "normalize.css": "^8.0.0",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.3.2",
+    "react-alice-carousel": "^1.9.2",
+    "react-dom": "^16.3.2",
+    "react-icons": "^2.2.7",
+    "react-loaders": "^3.0.1",
+    "react-masonry-component": "^6.2.0",
+    "react-responsive-navbar": "^1.0.11",
+    "react-scripts": "2.0.3",
+    "react-scroll": "^1.7.10",
+    "react-twitch-embed-video": "^1.0.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^3.2.6"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "cross-env PORT=3200 react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/**/*.js'"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "cross-env": "^5.1.4",
+    "stylelint": "^9.2.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.3.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  gooseman-codes:
+    image: gooseman-codes
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3200:3200

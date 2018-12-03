@@ -1,0 +1,148 @@
+:root {
+  --header-top-margin:-13px;
+  --dark-color: #17141f;
+  --light-color: #fafafa;
+  --twitch-item-color: #201c2b;
+  --twitch-accent-color: #b19dd8;
+  --twitch-purple: #6441a4;
+}
+
+.App {
+  /* text-align: center; */
+  font-size: 8px;
+  background: var(--dark-color);
+  color: var(--light-color);
+  font-size: 1rem;
+}
+
+.site-section {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 5rem;
+  a {
+    color: var(--light-color)
+  }
+  // &:nth-child(even) {
+  //   background: var(--light-color);
+  //   color: var(--dark-color);
+  //   a {
+  //     color: var(--dark-color);
+  //   }
+  // }
+}
+
+.header{
+  height: 4rem;
+}
+
+@media (max-width: 600px) {
+  .header-links {
+    display: none;
+  }
+}
+
+.subheader{
+  font-size: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.alice-carousel, .pad-top {
+  padding-top: 1rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.grid-column-container {
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.grid-row-container {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.grid-row-no-wrap-container {
+  flex: 1;
+  display: flex;
+}
+
+.flex-v-align-center {
+  align-items: center;
+}
+
+@for $i from 1 through 10 {
+  .flex-#{$i} {
+    flex: #{$i}
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+.social-info {
+  font-size: 1rem;
+  margin: 0.25rem;
+  text-decoration: none;
+
+  i {
+    font-size: 2rem;
+  }
+
+  span {
+    margin-left: 0.5rem;
+    vertical-align: super;
+  }
+}
+
+.card-grid-container {
+  flex: 1;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 3rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+}
