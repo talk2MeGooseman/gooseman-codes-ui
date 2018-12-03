@@ -1,15 +1,17 @@
 workflow "Build and deploy on push" {
   on = "push"
-  resolves = ["Deploy to AWS"]
+  resolves = [
+    "Deploy to AWS",
+  ]
 }
 
 action "Install" {
-  uses = "actions/npm@master"
+  uses = "actions/npm@6309cd9"
   args = "install"
 }
 
 action "Build" {
-  uses = "actions/npm@master"
+  uses = "actions/npm@6309cd9"
   args = "build"
   needs = ["Install"]
 }
@@ -20,4 +22,3 @@ action "Deploy to AWS" {
   secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
   needs = ["Build"]
 }
-
