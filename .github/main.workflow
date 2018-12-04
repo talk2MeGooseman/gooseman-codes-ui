@@ -7,7 +7,7 @@ workflow "Build and deploy on push" {
 
 action "Build" {
   uses = "actions/npm@6309cd9"
-  args = "build"
+  args = "run build"
 }
 
 action "Deploy to AWS" {
