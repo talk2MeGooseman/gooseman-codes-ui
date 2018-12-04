@@ -2,12 +2,19 @@ workflow "Build and deploy on push" {
   on = "push"
   resolves = [
     "Deploy to AWS",
+    "Install",
   ]
+}
+
+action "Install" {
+  uses = "actions/npm@6309cd9"
+  args = "install"
 }
 
 action "Build" {
   uses = "actions/npm@6309cd9"
   args = "run build"
+  needs = ["Install"]
 }
 
 action "Deploy to AWS" {
