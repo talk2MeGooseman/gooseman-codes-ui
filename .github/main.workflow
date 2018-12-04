@@ -5,15 +5,9 @@ workflow "Build and deploy on push" {
   ]
 }
 
-action "Install" {
-  uses = "actions/npm@6309cd9"
-  args = "install"
-}
-
 action "Build" {
   uses = "actions/npm@6309cd9"
   args = "build"
-  needs = ["Install"]
 }
 
 action "Deploy to AWS" {
