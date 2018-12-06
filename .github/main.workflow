@@ -7,13 +7,13 @@ workflow "Build and deploy on push" {
 }
 
 action "Install" {
-  uses = "actions/npm@6309cd9"
+  uses = "actions/npm@master"
   args = "install"
 }
 
 action "Build" {
-  uses = "actions/npm@6309cd9"
-  args = "run build"
+  uses = "actions/npm@master"
+  args = "build"
   needs = ["Install"]
 }
 
