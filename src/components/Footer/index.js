@@ -21,23 +21,23 @@ class Footer extends PureComponent {
         <Title className="header" content="Contact" />
         <div className="grid-row-container" style={{ paddingTop: '1rem'}}>
           <div className="grid-column-container flex-1">
-            <a href="mailto:erik@gooseman.codes" target="blank" className="social-info">
+            <a href="mailto:erik@gooseman.codes" target="blank" className="contact-info">
               <i class="fas fa-at"></i>
               <span>Send me an e-mail</span>
             </a>
-            <a href="https://twitch.tv/talk2megooseman" target="blank" className="social-info">
+            <a href="https://twitch.tv/talk2megooseman" target="blank" className="contact-info">
               <i className="fab fa-twitch"></i>
               <span>Follow Me On Twitch</span>
             </a>
-            <a href="https://discord.gg/unMtWz3" target="blank" className="social-info">
+            <a href="https://discord.gg/unMtWz3" target="blank" className="contact-info">
               <i className="fab fa-discord"></i>
               <span>Join My Discord</span>
             </a>
-            <a href="https://twitter.com/talk2megooseman" target="blank" className="social-info">
+            <a href="https://twitter.com/talk2megooseman" target="blank" className="contact-info">
               <i className="fab fa-twitter"></i>
               <span>Follow Me On Twitter</span>
             </a>
-            <a href="https://github.com/talk2megooseman" target="blank" className="social-info">
+            <a href="https://github.com/talk2megooseman" target="blank" className="contact-info">
               <i className="fab fa-github"></i>
               <span>Checkout Out My Github</span>
             </a>
