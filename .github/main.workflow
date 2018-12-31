@@ -8,7 +8,7 @@ workflow "Build and deploy on push" {
 
 action "Install" {
   uses = "actions/npm@master"
-  args = "install"
+  args = "ci"
 }
 
 action "Build" {
