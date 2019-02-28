@@ -42,7 +42,7 @@ import {
     title: 'Thoughtbot Upcase',
     description:
       "Become an experienced developer. We're not a bootcamp, we're a finishing school.",
-    pricingModel: PAID_PRICING,
+    pricingModel: FREE_PRICING,
     link: 'https://thoughtbot.com/upcase/',
   },
   {
@@ -97,5 +97,11 @@ import {
       'Articles aims to provide complete beginners to web development with all they need to start coding simple websites.',
     pricingModel: FREE_PRICING,
     link: 'https://developer.mozilla.org/en-US/docs/Learn',
+  },
+  {
+    title: 'SoloLearn',
+    description: 'Join the largest community of mobile code learners today',
+    pricingModel: FREE_PRICING,
+    link: 'https://www.sololearn.com/'
   },
 ];
