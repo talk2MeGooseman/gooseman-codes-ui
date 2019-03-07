@@ -1,6 +1,6 @@
 export default [
   {
-    caption: 'Stream Closed Captioner,
+    caption: 'Stream Closed Captioner',
     link: 'https://stream-cc.gooseman.codes',
     tags: ['Twitch Extension', 'AWS', 'Ruby on Rails', 'ReactJS'],
     description:
