@@ -1,5 +1,12 @@
 export default [
   {
+    caption: 'Stream Closed Captioner,
+    link: 'https://stream-cc.gooseman.codes',
+    tags: ['Twitch Extension', 'AWS', 'Ruby on Rails', 'ReactJS'],
+    description:
+      'Easily provide Closed Captioning for your viewers. All you have to do is install the extension, go to the companion web app and click "On"',
+  },
+  {
     caption: 'Github Project Panel Twitch Extension',
     link: 'https://www.twitch.tv/ext/yncbd7i177on3ia536r307nlvt8g1w',
     tags: ['Twitch Extension', 'JavaScript', 'Firebase', 'Node', 'ReactJS'],
