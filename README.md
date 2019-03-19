@@ -1,7 +1,7 @@
 # Front End Web App for gooseman.codes
+OH HAI
 
 ## Contributing Learning Resources
-
 Before doing a Pull Request for adding learning resources, make sure you are recommending stuff you would also like to learn from.
 Steps:
 
