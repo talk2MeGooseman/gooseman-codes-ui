@@ -1,0 +1,64 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - react-scripts > @babel/core > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > eslint-plugin-flowtype > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > fork-ts-checker-webpack-plugin-alt > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > html-webpack-plugin > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/core > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-eslint > @babel/traverse > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/core > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > eslint > inquirer > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > react-dev-utils > inquirer > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - node-sass-chokidar > node-sass > gaze > globule > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-eslint > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-modules-umd > @babel/helper-module-transforms > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-modules-umd > @babel/helper-module-transforms > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-eslint > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > jest > jest-cli > istanbul-api > async > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > jest > jest-cli > istanbul-api > istanbul-reports > handlebars > async > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
+    - react-scripts > babel-preset-react-app > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-03-18T16:47:01.549Z'
