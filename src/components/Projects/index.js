@@ -10,22 +10,6 @@ const ProjectsContainer = styled.section`
   flex-flow: column;
 `;
 
-const Caption = styled.span`
-  position: absolute;
-  padding: 1rem;
-`;
-
-const InfoOverlay = styled.div`
-  position: absolute;
-  bottom: 0;
-  background: #000;
-  opacity: 0.8;
-  height: 3.5rem;
-  width: 100%;
-  font-size: 1rem;
-  color: #fff;
-`;
-
 class Projects extends PureComponent {
   _renderProject() {
     return ProjectsList.map(data => {

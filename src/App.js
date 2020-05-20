@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import ClipsCoursel from './components/ClipsCoursel';
 import Projects from "./components/Projects";
 import LearningResoures from "./components/LearningResources";
-import CommunitySupporters from "./components/CommunitySupporters";
 import Footer from "./components/Footer";
 import About from "./components/About";
 

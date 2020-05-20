@@ -7,13 +7,6 @@ const FooterContainer = styled.footer`
   display: flex;
 `;
 
-const ProfilePic = styled.img`
-  background: #000;
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
-`;
-
 class Footer extends PureComponent {
   render() {
     return (
