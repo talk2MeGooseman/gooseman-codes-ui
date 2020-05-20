@@ -34,7 +34,7 @@
     "lint:css": "stylelint './src/**/*.js'"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-styled-components": "^1.10.7",
     "cross-env": "^5.1.4",
     "stylelint": "^9.2.0",
     "stylelint-config-recommended": "^2.1.0",
