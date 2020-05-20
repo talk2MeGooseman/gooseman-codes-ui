@@ -63,8 +63,8 @@ const Card = props => {
     font-weight: bold;
     letter-spacing: 1px;
     white-space: nowrap;
-    &:last-of-type { 
-      margin-right: 0px; 
+    &:last-of-type {
+      margin-right: 0px;
     }
   `;
 
@@ -87,7 +87,7 @@ const Card = props => {
 Card.propTypes = {
   title: PropTypes.string,
   pillColor: PropTypes.string,
-  pills: PropTypes.Array,
+  pills: PropTypes.array,
   description: PropTypes.string,
   link: PropTypes.string,
 }

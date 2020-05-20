@@ -41,7 +41,7 @@ class Footer extends PureComponent {
               <i className="fab fa-github"></i>
               <span>Checkout Out My Github</span>
             </a>
-            <div className="flex-1 pad-top">Copyright &copy; 2018 Erik Guzman</div>
+            <div className="flex-1 pad-top">Copyright &copy; 2020 Erik Guzman</div>
           </div>
           <div className="grid-row-container flex-1 flex-v-align-center">
           </div>

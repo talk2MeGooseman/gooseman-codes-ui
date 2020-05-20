@@ -17,7 +17,7 @@ class App extends Component {
         <Header />
         <TwitchVideo channel="talk2megooseman" width="100%" layout="video" />
         <About />
-        <ClipsCoursel />
+        {/* <ClipsCoursel /> */}
         <Projects />
         <LearningResoures />
         <Footer/>
