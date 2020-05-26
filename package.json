@@ -19,7 +19,7 @@
     "react-scroll": "^1.7.10",
     "react-twitch-embed-video": "^2.0.3",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
