@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal';
 import Loader from 'react-loaders';
@@ -6,8 +6,27 @@ import '../../styles/loaders.css';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ClipComponent from './Clip';
-import TwitchAPI from '../../services/TwitchAPI';
 import { Title } from "../shared/StyledComponents";
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+
+const GET_USER_AND_CLIPS = gql`
+  {
+    helix {
+      usersByNames(names: ["talk2megooseman"]) {
+        displayName
+        clips {
+          id
+          embedUrl
+          thumbnailUrl
+          title
+          views
+          creationDate
+        }
+      }
+    }
+  }
+`;
 
 const ClipsContainer = styled.section`
   padding: 0rem 1rem;
@@ -49,45 +68,31 @@ const carouselLoadingSettings = {
   },
 };
 
-class ClipsCoursel extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clips: [],
-      showModal: false,
-    };
+const ClipsCoursel = () => {
+  const { loading, error, data } = useQuery(GET_USER_AND_CLIPS);
+  const [state, setState] = useState({
+    showModal: false,
+  });
 
-    this.onClipClick = this.onClipClick.bind(this);
-    this.onDismissModal = this.onDismissModal.bind(this);
-  }
-
-  componentDidMount() {
-    TwitchAPI.fetchClips().then(clips => {
-      this.setState({
-        clips,
-      });
-    });
-  }
-
-  onClipClick(event) {
+  const onClipClick = (event) => {
     const embedURL = event.currentTarget.attributes['data-embed-url'].value;
-    this.setState({
+    setState({
       embedURL,
       showModal: true,
     });
   }
 
-  onDismissModal() {
-    this.setState({
+  const onDismissModal = () => {
+    setState({
       showModal: false,
     });
   }
 
-  _renderClips() {
+  const _renderClips = () => {
     let clips = [];
     let settings;
 
-    if (this.state.clips.length === 0) {
+    if (loading) {
       settings = carouselLoadingSettings;
       for (let index = 0; index < 2; index++) {
         clips.push(
@@ -97,11 +102,11 @@ class ClipsCoursel extends PureComponent {
           </div>
         );
       }
-    } else {
+    } else if(data) {
       settings = carouselClipsSettings;
-      this.state.clips.forEach(clip => {
+      data.helix.usersByNames[0].clips.forEach(clip => {
         clips.push(
-          <ClipComponent clip={clip} onClipClick={this.onClipClick} />
+          <ClipComponent clip={clip} onClipClick={onClipClick} />
         );
       });
     }
@@ -109,15 +114,15 @@ class ClipsCoursel extends PureComponent {
     return <AliceCarousel {...settings}>{clips}</AliceCarousel>;
   }
 
-  _renderFrame() {
-    if (!this.state.showModal) {
+  const _renderFrame = () => {
+    if (!state.showModal) {
       return null;
     }
 
     return (
       <iframe
         title="Clip"
-        src={this.state.embedURL}
+        src={state.embedURL}
         height="400"
         width="600"
         scrolling="no"
@@ -126,25 +131,23 @@ class ClipsCoursel extends PureComponent {
     );
   }
 
-  _displayModal() {
-    if (this.state.showModal) {
+  const _displayModal= () => {
+    if (state.showModal) {
       return (
-        <Modal onDismiss={this.onDismissModal}>{this._renderFrame()}</Modal>
+        <Modal onDismiss={onDismissModal}>{_renderFrame()}</Modal>
       );
     }
 
     return null;
   }
 
-  render() {
-    return (
-      <ClipsContainer id="clips" className="site-section">
-        <Title className="header" content="Clips" />
-        {this._renderClips()}
-        {this._displayModal()}
-      </ClipsContainer>
-    );
-  }
+  return (
+    <ClipsContainer id="clips" className="site-section">
+      <Title className="header" content="Clips" />
+      {_renderClips()}
+      {_displayModal()}
+    </ClipsContainer>
+  );
 }
 
 export default ClipsCoursel;

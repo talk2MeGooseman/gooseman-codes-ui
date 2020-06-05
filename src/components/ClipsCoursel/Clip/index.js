@@ -49,15 +49,15 @@ function toDateTimeString (datetime) {
 
 const ClipComponent  = ({clip, onClipClick}) => {
   return  (
-    <Clip key={clip.video_id} data-embed-url={clip.embed_url} thumbnail_url={clip.thumbnail_url} onClick={onClipClick}>
+    <Clip key={clip.id} data-embed-url={clip.embedUrl} thumbnail_url={clip.thumbnailUrl} onClick={onClipClick}>
       <Overlay />
       <IconConatiner>
         <PlayIcon />
       </IconConatiner>
       <Info>
         <div>{clip.title}</div>
-        <div>View Count: {clip.view_count}</div>
-        <div>{toDateTimeString(clip.created_at)}</div>
+        <div>View Count: {clip.views}</div>
+        <div>{toDateTimeString(clip.creationDate)}</div>
       </Info>
     </Clip>
   )
