@@ -13,7 +13,7 @@ import { gql } from 'apollo-boost';
 const GET_USER_AND_CLIPS = gql`
   {
     helix {
-      usersByNames(names: ["talk2megooseman"]) {
+      me {
         displayName
         clips {
           id
@@ -104,7 +104,7 @@ const ClipsCoursel = () => {
       }
     } else if(data) {
       settings = carouselClipsSettings;
-      data.helix.usersByNames[0].clips.forEach(clip => {
+      data.helix.me.clips.forEach(clip => {
         clips.push(
           <ClipComponent clip={clip} onClipClick={onClipClick} />
         );
