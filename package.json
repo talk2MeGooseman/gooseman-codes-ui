@@ -22,7 +22,8 @@
     "react-scroll": "^1.7.10",
     "react-twitch-embed-video": "^2.0.3",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "snyk": "^1.360.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -34,7 +35,9 @@
     "build-and-deploy": "npm run build && aws s3 sync build/ s3://gooseman.codes",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint:css": "stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.js'",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7",
@@ -49,5 +52,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "snyk": true
 }
