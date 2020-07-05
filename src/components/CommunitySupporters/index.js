@@ -23,9 +23,13 @@ const GET_SUBSCRIBERS = gql`
     }
     patreon {
       patrons {
-        fullName
         currentlyEntitledAmountCents
         lifetimeSupportCents
+        user {
+          fullName
+          url
+          imageUrl
+        }
       }
     }
   }
@@ -54,6 +58,7 @@ const ProfilePic = styled.img`
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
+  object-fit: cover;
 `;
 
 const SupporterName = styled.h3`
@@ -61,9 +66,9 @@ const SupporterName = styled.h3`
 `;
 
 function CommunitySupporters(props) {
-  const { loading, data } = useQuery(GET_SUBSCRIBERS);
+  const { loading, error, data } = useQuery(GET_SUBSCRIBERS);
 
-  if(loading) return <></>;
+  if(loading || error) return <></>;
 
   let subscribers = [];
   let patrons = [];
@@ -80,10 +85,11 @@ function CommunitySupporters(props) {
     );
   });
 
-  data.patreon.patrons.forEach(patron=> {
+  data.patreon.patrons.forEach(patron => {
     patrons.push(
-      <Card key={patron.fullName}>
-        <SupporterName>{patron.fullName}</SupporterName>
+      <Card key={patron.user.id}>
+        <ProfilePic src={patron.user.imageUrl} />
+        <SupporterName>{patron.user.fullName}</SupporterName>
         <div>
           <sub>Current Pledge: {patron.currentlyEntitledAmountCents/DOLLAR_IN_CENTS}</sub>
         </div>
