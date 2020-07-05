@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import CloseIcon from "react-icons/lib/md/close";
+import { MdClose } from "react-icons/md";
 
 const ModalContainer = styled.div`
-  // display: ${ props => props.show ? 'block' : 'none'};
   background: #fff;
   color: #000;
   white-space: normal;
@@ -25,19 +24,18 @@ const ModalContainer = styled.div`
   padding: 1rem;
 
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.50);
-  
+
   border: none;
   border-radius: 0.2rem;
   z-index: 51;
 `;
 
 const Overlay = styled.div`
-  // display: ${ props => props.show ? 'block' : 'none'};
   z-index: 50;
   position: fixed;
   background: #000;
   filter: opacity(50%);
-  
+
   top: 0;
   bottom: 0;
   right: 0;
@@ -70,7 +68,7 @@ class Modal extends PureComponent {
     return (
       <React.Fragment>
         <ModalContainer>
-          <CloseContainer onClick={this.dismissModal}><CloseIcon /></CloseContainer>
+          <CloseContainer onClick={this.dismissModal}><MdClose /></CloseContainer>
           <div>
             {this.props.children}
           </div>

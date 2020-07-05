@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
 
 const HeaderDiv = styled.div`
   background: #000;
   color: #fff;
   max-height: 3rem;
-  height: 3rem
+  height: 3rem;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayIcon from "react-icons/lib/md/play-arrow";
+import { MdPlayArrow } from "react-icons/md";
 import styled from 'styled-components';
 
 const Clip = styled.div`
@@ -52,7 +52,7 @@ const ClipComponent  = ({clip, onClipClick}) => {
     <Clip key={clip.id} data-embed-url={clip.embedUrl} thumbnail_url={clip.thumbnailUrl} onClick={onClipClick}>
       <Overlay />
       <IconConatiner>
-        <PlayIcon />
+        <MdPlayArrow />
       </IconConatiner>
       <Info>
         <div>{clip.title}</div>

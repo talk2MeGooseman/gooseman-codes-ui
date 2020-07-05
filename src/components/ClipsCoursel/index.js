@@ -1,4 +1,4 @@
-import React, { PureComponent, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal';
 import Loader from 'react-loaders';
@@ -69,7 +69,7 @@ const carouselLoadingSettings = {
 };
 
 const ClipsCoursel = () => {
-  const { loading, error, data } = useQuery(GET_USER_AND_CLIPS);
+  const { loading, data } = useQuery(GET_USER_AND_CLIPS);
   const [state, setState] = useState({
     showModal: false,
   });

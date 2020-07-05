@@ -22,7 +22,6 @@ const Button = styled.a`
   width: 100px;
   padding: 5px 10px;
   outline: none;
-  border: none;
   color: var(--dark-color)!important;
   font-size: 13px;
   font-weight: bold;
