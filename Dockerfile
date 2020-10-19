@@ -1,8 +1,17 @@
-FROM node:8.9-alpine
-# ENV NODE_ENV production
+FROM node:13.5-alpine
+
+ENV NODE_ENV=production
+
 WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "yarn.lock", "npm-shrinkwrap.json*", "./"]
-RUN npm install --silent && mv node_modules ../
+
+COPY package*.json ./
+
+RUN npm install --silent
+
 COPY . .
-EXPOSE 3200
-CMD npm start
+
+RUN npm run build
+
+EXPOSE 8080
+
+CMD ["npm", "run", "start:prod"]

@@ -22,6 +22,7 @@
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.10",
     "react-twitch-embed-video": "^2.0.3",
+    "serve": "^11.3.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1"
   },
@@ -30,6 +31,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "cross-env PORT=3200 react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
+    "start:prod": "serve -l 8080 -s build",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "build-and-deploy": "npm run build && aws s3 sync build/ s3://gooseman.codes",
