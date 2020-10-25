@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal';
 import Loader from 'react-loaders';
-import '../../styles/loaders.css';
+import '../../styles/loaders.scss';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ClipComponent from './Clip';
