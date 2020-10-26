@@ -1,7 +1,5 @@
 FROM node:13.5-alpine
 
-ENV NODE_ENV=production
-
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -10,8 +8,6 @@ RUN npm install --silent
 
 COPY . .
 
-RUN npm run build
+EXPOSE 3000
 
-EXPOSE 80
-
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "start"]
