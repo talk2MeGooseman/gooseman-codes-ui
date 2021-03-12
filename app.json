@@ -1,0 +1,7 @@
+{
+  "name": "Gooseman.codes site",
+  "repository": "https://github.com/talk2megooseman/gooseman-codes-ui",
+  "buildpacks": [
+    { "url": "https://github.com/mars/create-react-app-buildpack.git" }
+  ]
+}
