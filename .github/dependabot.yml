@@ -1,0 +1,28 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: styled-components
+    versions:
+    - 5.2.1
+    - 5.2.2
+  - dependency-name: stylelint
+    versions:
+    - 13.10.0
+    - 13.11.0
+    - 13.12.0
+    - 13.9.0
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: react-icons
+    versions:
+    - 4.1.0
+  - dependency-name: react-scroll
+    versions:
+    - 1.8.1
