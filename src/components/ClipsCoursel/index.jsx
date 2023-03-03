@@ -7,8 +7,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ClipComponent from './Clip';
 import { Title } from "../shared/StyledComponents";
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { useQuery, gql } from '@apollo/client';
 
 const GET_USER_AND_CLIPS = gql`
   {

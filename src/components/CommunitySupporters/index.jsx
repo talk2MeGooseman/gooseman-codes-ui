@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Title } from "../shared/StyledComponents";
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { useQuery, gql } from '@apollo/client';
 
 const BASE_TIER_VALUE = 1000;
 const DOLLAR_IN_CENTS = 100;
