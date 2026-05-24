@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
-import Header from './components/header';
-import Projects from "./components/Projects";
-import LearningResoures from "./components/LearningResources";
-import Footer from "./components/Footer";
-import About from "./components/About";
-import ClipsCoursel from "./components/ClipsCoursel";
-import CommunitySupporters from "./components/CommunitySupporters";
+import React, { useState, useEffect } from 'react';
+import PALETTES from './styles/palettes';
+import NavBar from './components/NavBar';
+import Hero from './components/Hero';
+import ExtensionsGrid from './components/ExtensionsGrid';
+import About from './components/About';
+import Footer from './components/Footer';
 
-import TwitchVideo from "react-twitch-embed-video";
-import './App.scss';
+const App = () => {
+  const [palette, setPalette] = useState('midnight');
+  const p = PALETTES[palette];
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <TwitchVideo channel="talk2megooseman" width="100%" layout="video" />
-        <About />
-        <CommunitySupporters />
-        <Projects />
-        <LearningResoures />
-        <ClipsCoursel />
-        <Footer/>
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    document.body.style.backgroundColor = p.bg;
+    document.body.style.color = p.text;
+  }, [p]);
+
+  return (
+    <div style={{ minHeight: '100vh', background: p.bg, transition: 'background 0.4s ease' }}>
+      <NavBar p={p} palette={palette} onPaletteChange={setPalette} />
+      <Hero p={p} />
+      <ExtensionsGrid p={p} />
+      <About p={p} />
+      <Footer p={p} />
+    </div>
+  );
+};
 
 export default App;
