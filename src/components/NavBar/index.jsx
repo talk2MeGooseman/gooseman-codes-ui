@@ -8,6 +8,7 @@ const NavBar = ({ p, palette, onPaletteChange }) => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 

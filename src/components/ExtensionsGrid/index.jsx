@@ -78,6 +78,8 @@ const ExtensionCard = ({ ext, p }) => {
 
 const InstallLink = ({ href, p }) => {
   const [hovered, setHovered] = useState(false);
+  const label = href.includes('twitch.tv/ext/') ? 'Install on Twitch' : 'Open';
+
   return (
     <a
       href={href}
@@ -93,12 +95,13 @@ const InstallLink = ({ href, p }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      Install on Twitch
+      {label}
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
         <path d="M4 12L12 4m0 0H5m7 0v7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </a>
   );
+};
 };
 
 const ExtensionsGrid = ({ p }) => (
