@@ -36,7 +36,7 @@ const NavBar = ({ p, palette, onPaletteChange }) => {
         ))}
         <button
           onClick={nextPalette}
-          title={`Theme: ${p.name}`}
+          aria-label={`Switch color theme, currently ${p.name}`}
           style={{
             padding: '6px 12px', borderRadius: 6, fontSize: 12, fontWeight: 600,
             border: `1px solid ${p.border}`, background: p.accentSubtle,
@@ -52,17 +52,22 @@ const NavBar = ({ p, palette, onPaletteChange }) => {
 };
 
 const NavLink = ({ href, label, p }) => {
-  const [hovered, setHovered] = useState(false);
+  const [active, setActive] = useState(false);
   return (
     <a
       href={href}
       style={{
-        fontSize: 14, color: hovered ? p.text : p.textMuted,
+        fontSize: 14, color: active ? p.text : p.textMuted,
         textDecoration: 'none', fontWeight: 500, cursor: 'pointer',
         transition: 'color 0.2s',
+        outline: 'none',
+        boxShadow: active ? `0 0 0 2px ${p.accent}` : 'none',
+        borderRadius: 3,
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
     >
       {label}
     </a>

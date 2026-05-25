@@ -47,7 +47,7 @@ const ExtensionCard = ({ ext, p }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={{
+      <div aria-hidden="true" style={{
         width: 44, height: 44, borderRadius: 10,
         background: p.accentSubtle,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -71,13 +71,13 @@ const ExtensionCard = ({ ext, p }) => {
       <div style={{ fontSize: 15, color: p.textMuted, lineHeight: 1.6, flex: 1 }}>
         {ext.desc}
       </div>
-      <InstallLink href={ext.link} p={p} />
+      <InstallLink href={ext.link} name={ext.name} p={p} />
     </div>
   );
 };
 
-const InstallLink = ({ href, p }) => {
-  const [hovered, setHovered] = useState(false);
+const InstallLink = ({ href, name, p }) => {
+  const [active, setActive] = useState(false);
   const label = href.includes('twitch.tv/ext/') ? 'Install on Twitch' : 'Open';
 
   return (
@@ -85,18 +85,24 @@ const InstallLink = ({ href, p }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`${label} — ${name} (opens in new tab)`}
       style={{
         display: 'inline-flex', alignItems: 'center',
-        gap: hovered ? 10 : 6,
+        gap: active ? 10 : 6,
         fontSize: 14, fontWeight: 600, color: p.accent,
         textDecoration: 'none', marginTop: 4,
         transition: 'gap 0.2s',
+        outline: 'none',
+        boxShadow: active ? `0 0 0 2px ${p.accent}` : 'none',
+        borderRadius: 3,
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
     >
-      {label}
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <span aria-hidden="true">{label}</span>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none">
         <path d="M4 12L12 4m0 0H5m7 0v7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </a>
@@ -104,8 +110,8 @@ const InstallLink = ({ href, p }) => {
 };
 
 const ExtensionsGrid = ({ p }) => (
-  <section id="extensions" style={{ padding: '0 48px 80px', maxWidth: 900, margin: '0 auto' }}>
-    <div style={{
+  <section id="extensions" aria-label="Extensions" style={{ padding: '0 48px 80px', maxWidth: 900, margin: '0 auto' }}>
+    <div aria-hidden="true" style={{
       fontSize: 13, fontWeight: 600, color: p.accent,
       textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 24,
     }}>

@@ -18,9 +18,11 @@ const App = () => {
   return (
     <div style={{ minHeight: '100vh', background: p.bg, transition: 'background 0.4s ease' }}>
       <NavBar p={p} palette={palette} onPaletteChange={setPalette} />
-      <Hero p={p} />
-      <ExtensionsGrid p={p} />
-      <About p={p} />
+      <main>
+        <Hero p={p} />
+        <ExtensionsGrid p={p} />
+        <About p={p} />
+      </main>
       <Footer p={p} />
     </div>
   );

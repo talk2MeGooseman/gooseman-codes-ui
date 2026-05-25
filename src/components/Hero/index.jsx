@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const Hero = ({ p }) => {
-  const [ctaHovered, setCtaHovered] = useState(false);
+  const [ctaActive, setCtaActive] = useState(false);
 
   return (
-    <section style={{
+    <section aria-label="Introduction" style={{
       maxWidth: 680, margin: '0 auto', padding: '140px 48px 72px',
       textAlign: 'center',
     }}>
@@ -31,18 +31,22 @@ const Hero = ({ p }) => {
         style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
           padding: '14px 28px',
-          background: ctaHovered ? p.accentHover : p.accent,
+          background: ctaActive ? p.accentHover : p.accent,
           color: '#fff', border: 'none', borderRadius: 8,
           fontSize: 15, fontWeight: 600, cursor: 'pointer',
           textDecoration: 'none',
-          transform: ctaHovered ? 'translateY(-1px)' : 'translateY(0)',
+          transform: ctaActive ? 'translateY(-1px)' : 'translateY(0)',
           transition: 'background 0.2s, transform 0.15s',
+          outline: 'none',
+          boxShadow: ctaActive ? `0 0 0 3px ${p.accentHover}` : 'none',
         }}
-        onMouseEnter={() => setCtaHovered(true)}
-        onMouseLeave={() => setCtaHovered(false)}
+        onMouseEnter={() => setCtaActive(true)}
+        onMouseLeave={() => setCtaActive(false)}
+        onFocus={() => setCtaActive(true)}
+        onBlur={() => setCtaActive(false)}
       >
         Browse Extensions
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M8 3v10m0 0l4-4m-4 4L4 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </a>

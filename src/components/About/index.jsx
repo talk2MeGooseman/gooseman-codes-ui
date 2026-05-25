@@ -1,7 +1,7 @@
 import React from 'react';
 
 const About = ({ p }) => (
-  <section id="about" style={{
+  <section id="about" aria-label="About" style={{
     padding: '56px 48px',
     maxWidth: 900, margin: '0 auto',
     borderTop: `1px solid ${p.border}`,
