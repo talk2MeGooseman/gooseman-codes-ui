@@ -28,7 +28,7 @@ const NavBar = ({ p, palette, onPaletteChange }) => {
       transition: 'all 0.3s ease',
     }}>
       <div style={{ fontSize: 18, fontWeight: 700, color: p.text, letterSpacing: '-0.02em' }}>
-        gooseman.codes
+        talk2megooseman - gooseman.codes
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
         {['Extensions', 'About', 'Contact'].map(label => (
