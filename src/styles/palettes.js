@@ -37,7 +37,7 @@ const PALETTES = {
     surface: '#ffffff',
     surfaceHover: '#f0ece5',
     text: '#1a1714',
-    textMuted: '#7a7568',
+    textMuted: '#5e5b52',
     accent: '#c05a2c',
     accentHover: '#d4683a',
     accentSubtle: 'rgba(192, 90, 44, 0.08)',
