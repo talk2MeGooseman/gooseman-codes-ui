@@ -102,7 +102,6 @@ const InstallLink = ({ href, p }) => {
     </a>
   );
 };
-};
 
 const ExtensionsGrid = ({ p }) => (
   <section id="extensions" style={{ padding: '0 48px 80px', maxWidth: 900, margin: '0 auto' }}>

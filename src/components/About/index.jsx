@@ -13,14 +13,15 @@ const About = ({ p }) => (
       Who Am I?
     </div>
     <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-      <div style={{
-        width: 72, height: 72, borderRadius: '50%',
-        background: p.accentSubtle, border: `2px solid ${p.border}`,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: 22, fontWeight: 700, color: p.accent, flexShrink: 0,
-      }}>
-        EG
-      </div>
+      <img
+        src="/images/me.png"
+        alt="Erik Guzman"
+        style={{
+          width: 72, height: 72, borderRadius: '50%',
+          border: `2px solid ${p.border}`,
+          objectFit: 'cover', flexShrink: 0,
+        }}
+      />
       <div>
         <div style={{ fontSize: 18, fontWeight: 700, color: p.text, marginBottom: 4 }}>
           Erik Guzman - talk2MeGooseman
