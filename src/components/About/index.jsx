@@ -10,7 +10,7 @@ const About = ({ p }) => (
       fontSize: 13, fontWeight: 600, color: p.accent,
       textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 24,
     }}>
-      About
+      Who Am I?
     </div>
     <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
       <div style={{
@@ -23,10 +23,10 @@ const About = ({ p }) => (
       </div>
       <div>
         <div style={{ fontSize: 18, fontWeight: 700, color: p.text, marginBottom: 4 }}>
-          Erik Guzman
+          Erik Guzman - talk2MeGooseman
         </div>
         <div style={{ fontSize: 15, color: p.textMuted, lineHeight: 1.6 }}>
-          Senior Software Developer building tools that make Twitch better for streamers and their communities. Focused on accessibility, developer experience, and open source.
+          A Staff Engineer and Twitch stream lurker building tools that make Twitch better for streamers and their communities in my free time. Focused on accessibility, developer experience, and open source.
         </div>
       </div>
     </div>
