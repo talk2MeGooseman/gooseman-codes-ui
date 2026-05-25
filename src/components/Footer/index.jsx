@@ -95,7 +95,7 @@ const Footer = ({ p }) => (
       <div style={{ fontSize: 24, fontWeight: 700, color: p.text, marginBottom: 24 }}>
         Get in touch
       </div>
-      <div style={{ display: 'flex', gap: 16 }}>
+      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         {CONTACT_LINKS.map(link => (
           <ContactCard key={link.label} {...link} p={p} />
         ))}
